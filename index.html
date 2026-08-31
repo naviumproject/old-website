@@ -35,39 +35,52 @@
         /* Sección Hero */
         .hero {
             text-align: center;
-            padding: 100px 0;
+            /* Se redujo el padding superior de 100px a 20px para empujar todo hacia arriba */
+            padding: 20px 0 100px 0; 
             background: linear-gradient(180deg, #1a1a1a 0%, #2a2a2a 100%);
             position: relative;
-            overflow: hidden; /* Oculta lo que se sale de los lados */
+            overflow: hidden; 
         }
-        .hero h1 { font-size: 4.5rem; margin-bottom: 10px; position: relative; z-index: 3; }
-        .hero h3 { font-size: 1.8rem; margin-bottom: 40px; position: relative; z-index: 3; }
+        .hero h1 { 
+            font-size: 4.5rem; 
+            margin-top: 10px; 
+            margin-bottom: 5px; 
+            position: relative; 
+            z-index: 3; 
+        }
+        .hero h3 { 
+            font-size: 1.8rem; 
+            /* Se redujo el margen inferior para pegar más las imágenes al texto */
+            margin-bottom: 20px; 
+            position: relative; 
+            z-index: 3; 
+        }
         
         .hero-images {
             position: relative;
             display: flex;
             justify-content: center;
             align-items: center;
-            margin: 40px 0;
-            min-height: 500px; /* Espacio para que las imágenes no aplasten el botón */
+            margin: 20px 0 40px 0;
+            min-height: 500px; 
             width: 100%;
         }
         
-        /* Filtros base para imágenes */
+        /* Filtro mucho más duro: más sepia, muchísima más saturación y contraste */
         .hero-images img, .split-layout img {
             border-radius: 0; 
             object-fit: cover;
-            filter: sepia(0.4) saturate(1.4) hue-rotate(-5deg); 
+            filter: sepia(0.85) saturate(2.5) hue-rotate(-15deg) contrast(1.15); 
         }
         
         /* Imágenes laterales gigantes y empujadas a los lados */
         .img-side {
             position: absolute;
             top: 50%;
-            transform: translateY(-50%); /* Centrado vertical perfecto */
-            width: 850px; /* Tamaño masivo */
+            transform: translateY(-50%);
+            width: 850px; 
             opacity: 0.85;
-            transition: opacity 0.3s ease; /* Solo transiciona la opacidad, sin crecer */
+            transition: opacity 0.3s ease; 
             z-index: 1;
         }
         .img-side:hover { 
@@ -75,11 +88,11 @@
         }
         .img-side.left {
             right: 50%;
-            margin-right: 180px; /* Separación desde el centro hacia la izquierda */
+            margin-right: 180px; 
         }
         .img-side.right {
             left: 50%;
-            margin-left: 180px; /* Separación desde el centro hacia la derecha */
+            margin-left: 180px; 
         }
         
         /* Logo central */
@@ -173,7 +186,6 @@
         <h3>the browser sdjasiod</h3>
         
         <div class="hero-images">
-            <!-- Se añadieron las clases 'left' y 'right' -->
             <img src="twitter.png" alt="Pissandshittium background" class="img-side left">
             <img src="navium_icon.png" alt="Navium Icon" class="img-center">
             <img src="main.png" alt="Chromium background" class="img-side right">
