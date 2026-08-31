@@ -1,167 +1,243 @@
-<html class="js sizes srcset pc webpalpha webp webp-alpha webp-animation webp-lossless" prefix="og: https://ogp.me/ns#" lang="es" style="--header-offset: 62px;">
+<!DOCTYPE html>
+<html lang="es">
 <head>
-    <link rel="preconnect" href="https://duyn491kcolsw.cloudfront.net" crossorigin="">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-    <meta charset="utf-8">
-    <link rel="icon" href="https://duyn491kcolsw.cloudfront.net/files/03/03l/03lww0.svg?ph=7631b78d1e" type="image/svg+xml" sizes="any">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>navium</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <link href="https://duyn491kcolsw.cloudfront.net/files/0r/0rk/0rklmm.css?ph=7631b78d1e" media="print" rel="stylesheet">
-    <link href="https://duyn491kcolsw.cloudfront.net/files/3n/3ny/3ny4od.css?ph=7631b78d1e" media="screen and (min-width:100000em)" rel="stylesheet" data-type="cq" disabled="">
-    <link rel="stylesheet" href="https://duyn491kcolsw.cloudfront.net/files/1i/1ik/1ikvgu.css?ph=7631b78d1e">
-    <link rel="stylesheet" href="https://duyn491kcolsw.cloudfront.net/files/0k/0k1/0k1ucs.css?ph=7631b78d1e" media="screen and (min-width:37.5em)">
-    <link rel="stylesheet" href="https://duyn491kcolsw.cloudfront.net/files/0o/0on/0onzbj.css?ph=7631b78d1e">
-    <link rel="stylesheet" href="https://duyn491kcolsw.cloudfront.net/files/34/34q/34qmjb.css?ph=7631b78d1e" media="screen and (min-width:37.5em)">
-    <link rel="stylesheet" href="https://duyn491kcolsw.cloudfront.net/files/1j/1jo/1jorv9.css?ph=7631b78d1e">
-    <link rel="stylesheet" href="https://duyn491kcolsw.cloudfront.net/files/3d/3dz/3dzb9f.css?ph=7631b78d1e">
-    <link rel="stylesheet" href="https://duyn491kcolsw.cloudfront.net/files/01/013/0133ua.css?ph=7631b78d1e" media="screen and (min-width:37.5em)">
     <meta name="description" content="i make whatever comes to my mind">
-    <meta property="og:title" content="navium">
-    <meta property="og:site_name" content="navium">
-    <meta property="og:description" content="i make whatever comes to my mind">
-    <meta name="robots" content="noindex,nofollow">
+    <style>
+        /* Estilos Globales */
+        :root {
+            --bg-dark: #1a1a1a;
+            --bg-light: #2c2c2c;
+            --text-main: #f0f0f0;
+            --accent: #3498db;
+        }
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            overflow-x: hidden;
+        }
+        h1, h2, h3 {
+            font-family: 'Times New Roman', serif; /* Simula la fuente serif original */
+            text-align: center;
+        }
+        a {
+            color: var(--text-main);
+            text-decoration: none;
+        }
+        
+        /* Navegación */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            background-color: #111;
+            border-bottom: 1px solid #333;
+        }
+        .nav-logo { font-size: 24px; font-weight: bold; font-family: serif; }
+        .nav-links { display: flex; gap: 20px; font-size: 14px; }
+        .nav-links a:hover { color: var(--accent); }
+
+        /* Sección Hero con las 3 imágenes */
+        .hero {
+            text-align: center;
+            padding: 80px 20px;
+            background: linear-gradient(180deg, #1a1a1a 0%, #2a2a2a 100%);
+        }
+        .hero h1 { font-size: 3rem; margin-bottom: 10px; }
+        .hero h3 { font-size: 1.5rem; font-weight: normal; margin-bottom: 40px; }
+        
+        .hero-images {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 40px;
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .hero-images img {
+            border-radius: 10px;
+            object-fit: cover;
+        }
+        .img-side { width: 300px; opacity: 0.8; transition: 0.3s; }
+        .img-side:hover { opacity: 1; transform: scale(1.05); }
+        .img-center { width: 250px; z-index: 2; } /* navium_icon.png */
+
+        .btn-download {
+            display: inline-block;
+            padding: 15px 30px;
+            border: 1px solid #fff;
+            background: transparent;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .btn-download:hover {
+            background: #fff;
+            color: #000;
+        }
+
+        /* Secciones Generales */
+        .section { padding: 80px 10%; }
+        .bg-alt { background-color: var(--bg-light); }
+        
+        /* Layout de 2 columnas */
+        .split-layout {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+        .split-layout > div { flex: 1; }
+        .split-layout img { max-width: 100%; border-radius: 10px; }
+
+        /* Acordeón de FAQs */
+        details {
+            background: #333;
+            margin-bottom: 10px;
+            padding: 15px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        summary { font-weight: bold; font-family: serif; font-size: 1.2rem; }
+        details p { margin-top: 15px; color: #ccc; }
+
+        /* Grid de Características */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            text-align: center;
+            margin-top: 50px;
+        }
+        .feature-icon { font-size: 40px; margin-bottom: 15px; }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 30px;
+            background: #000;
+            font-size: 0.9rem;
+            color: #777;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; } /* Ocultar menú en móviles por ahora */
+            .hero-images { flex-direction: column; }
+            .split-layout { flex-direction: column; }
+        }
+    </style>
 </head>
-<body class="l wt-home l-default l-d-none b-btn-sq b-btn-s-l b-btn-dn b-btn-bw-1 img-d-n img-t-o img-h-z line-solid b-e-ds lbox-d c-s-s desktop mm-mono menu-ready">
-<div class="wnd-page l-page cs-gray ac-none t-t-fs-m t-t-fw-m t-t-sp-n t-t-d-n t-s-fs-l t-s-fw-m t-s-sp-n t-s-d-n t-p-fs-m t-p-fw-l t-p-sp-n t-h-fs-m t-h-fw-m t-h-sp-n t-bq-fs-m t-bq-fw-m t-bq-sp-n t-bq-d-q t-btn-fw-l t-nav-fw-l t-pd-fw-l t-nav-tt-n">
-    <header class="l-h cf">
-        <div class="sw cf">
-            <div class="sw-c cf">
-                <section data-space="true" class="s s-hn s-hn-default logo-classic sc-d wnd-w-wider wnd-nh-m hm-claims wnd-nav-border wnd-nav-sticky menu-spaces">
-                    <div class="s-w">
-                        <div class="s-o">
-                            <div class="h-w h-f wnd-fixed" style="top: 0px; position: static;">
-                                <div class="n-l">
-                                    <div class="s-c menu-nav">
-                                        <div class="logo-block">
-                                            <div class="b b-l logo logo-default logo-nb wnd-font-size-20 playfair-display logo-32 wnd-logo-with-text b-ls-l">
-                                                <div class="b-l-c logo-content">
-                                                    <div class="b-l-text logo-text-wrapper">
-                                                        <div class="b-l-text-w logo-text">
-                                                            <span class="b-l-text-c logo-text-cell">hi</span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div id="menu-slider">
-                                            <div id="menu-block">
-                                                <nav id="menu">
-                                                    <div class="menu-font menu-wrapper">
-                                                        <ul role="menubar" aria-label="Menú" class="level-1">
-                                                            <li role="none" class="wnd-active wnd-homepage">
-                                                                <a class="menu-item" role="menuitem" href="/" aria-current="page"><span class="menu-item-text">home :) / navium</span></a>
-                                                            </li>
-                                                            <li role="none">
-                                                                <a class="menu-item" role="menuitem" href="/fuckedge/"><span class="menu-item-text">fuckedge x.x</span></a>
-                                                            </li>
-                                                            <li role="none">
-                                                                <a class="menu-item" role="menuitem" href="/github-pages-x/"><span class="menu-item-text">github pages :x</span></a>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </nav>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
+<body>
+
+    <!-- Navegación -->
+    <nav>
+        <div class="nav-logo">hi</div>
+        <div class="nav-links">
+            <a href="/">home :) / navium</a>
+            <a href="#">fuckedge x.x</a>
+            <a href="#">github pages :x</a>
+            <a href="#">more</a>
+            <a href="#">weak browser</a>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+        <h1>navium</h1>
+        <h3>the browser sdjasiod</h3>
+        
+        <div class="hero-images">
+            <img src="twitter.png" alt="Pissandshittium background" class="img-side">
+            <img src="navium_icon.png" alt="Navium Icon" class="img-center">
+            <img src="main.png" alt="Chromium background" class="img-side">
+        </div>
+
+        <a href="https://github.com/naviumproject" class="btn-download" target="_blank">download for microsoft windows</a>
+    </section>
+
+    <!-- Dont judge me -->
+    <section class="section bg-alt" style="text-align: center;">
+        <h2>— dont judge me —</h2>
+    </section>
+
+    <!-- I make whatever -->
+    <section class="section split-layout">
+        <div>
+            <h2>i make whatever comes to my mind</h2>
+            <p>i make whatever comes to my mind i make whatever comes to my mind i make whatever comes to my mind i make whatever comes to my mind...</p>
+        </div>
+        <div>
+            <img src="navium_icon.png" alt="Navium Icon">
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="section bg-alt">
+        <h2>Testimonials (spoiler: no one)</h2>
+        <div class="split-layout" style="text-align: center; margin-top: 40px;">
+            <div>
+                <img src="navium_icon.png" style="width: 150px;" alt="User">
+                <h3>no one</h3>
+                <p>no one no one no one no one</p>
+            </div>
+            <div>
+                <img src="navium_icon.png" style="width: 150px;" alt="User">
+                <h3>no one</h3>
+                <p>no one no one no one no one no one no one no one no one.</p>
             </div>
         </div>
-    </header>
-    <main class="l-m cf">
-        <div class="sw cf">
-            <div class="sw-c cf">
-                <section class="s s-hm s-hm-claims cf sc-m wnd-background-image wnd-w-default wnd-s-higher wnd-h-full wnd-nh-m wnd-p-tc hn-default">
-                    <div class="s-w cf">
-                        <div class="s-o cf">
-                            <div class="h-c s-c">
-                                <div class="h-c-b">
-                                    <div class="h-c-b-i">
-                                        <h1 class="claim cf"><span class="sit b claim-default claim-nb nunito claim-52">
-                                            <span class="sit-w"><span class="sit-c"><strong>navium</strong></span></span>
-                                        </span></h1>
-                                        <h3 class="claim cf"><span class="sit b claim-default claim-nb proxima-nova claim-26">
-                                            <span class="sit-w"><span class="sit-c"><strong>the browser sdjasiod</strong></span></span>
-                                        </span></h3>
-                                        <div class="b b-s b-s-t150 b-s-b150 b-btn b-btn-2">
-                                            <div class="b-btn-c i-a">
-                                                <a class="b-btn-l" href="https://github.com/inuez/navium/releases/download/1.0.0alpha/nyaz.zip" rel="nofollow" target="_blank">
-                                                    <span class="b-btn-t">download for microsoft windows</span>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                <section class="s s-hc s-hc-claim cf sc-ml wnd-w-default wnd-s-normal wnd-hh-high wnd-p-cc">
-                    <div class="s-w cf">
-                        <div class="s-o cf">
-                            <div class="s-c cf">
-                                <div class="s-hc-c">
-                                    <h1 class="s-hc-claim claim i-a"><span class="sit b claim-beside claim-nb roboto claim-32">
-                                        <span class="sit-w"><span class="sit-c"><strong>dont</strong> <strong>judge</strong> <strong>me</strong></span></span>
-                                    </span></h1>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                <section class="s s-basic cf sc-cd sc-a wnd-w-default wnd-s-higher wnd-h-auto">
-                    <div class="s-w cf">
-                        <div class="s-o s-fs cf">
-                            <div class="s-c s-fs cf">
-                                <div class="ez cf">
-                                    <div class="ez-c">
-                                        <div class="cw cf">
-                                            <div class="cw-c cf">
-                                                <div class="c cf" style="width:100%;">
-                                                    <div class="c-c cf">
-                                                        <div class="b b-text cf">
-                                                            <div class="b-c b-text-c b-s b-s-t60 b-s-b60 b-cs cf">
-                                                                <h1>i make whatever comes to my mind</h1> 
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
+    </section>
+
+    <!-- FAQs -->
+    <section class="section">
+        <h2>FAQs (not really)</h2>
+        <div style="max-width: 800px; margin: 0 auto;">
+            <details>
+                <summary>wan. are you going to fork another browser?</summary>
+                <p>no (yes) and it is called fuckedge.</p>
+            </details>
+            <details>
+                <summary>thu. is this a joke?</summary>
+                <p>y e s .</p>
+            </details>
+            <details>
+                <summary>tree. do you think this is trash?</summary>
+                <p>yes. and i really hate it.</p>
+            </details>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section class="section bg-alt">
+        <h2>Features</h2>
+        <div class="features-grid">
+            <div>
+                <div class="feature-icon">🧪</div>
+                <p>experiment new things that idk if you already know these</p>
+                <h3>xd</h3>
+            </div>
+            <div>
+                <div class="feature-icon">🔧</div>
+                <p>it was hard to develop, and i had to put very much effort. also it has a good font and yeah</p>
+            </div>
+            <div>
+                <div class="feature-icon">🐦</div>
+                <p>if ur here to contact me, sorry no</p>
             </div>
         </div>
-    </main>
-    <footer class="l-f cf">
-        <div class="sw cf">
-            <div class="sw-c cf">
-                <section data-wn-border-element="s-f-border" class="s s-f s-f-double s-f-simple sc-m wnd-background-image wnd-w-default wnd-s-higher">
-                    <div class="s-w">
-                        <div class="s-o">
-                            <div class="s-c s-f-l-w s-f-border">
-                                <div class="s-f-l b-s b-s-t0 b-s-b0">
-                                    <div class="s-f-l-c s-f-l-c-first">
-                                        <div class="s-f-cr"><span class="it b link">
-                                            <span class="it-c">no copyright / navium / ayno (nyaz)</span>
-                                        </span></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-            </div>
-        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        no copyright / navium / ayno (nyaz)
     </footer>
-</div>
+
 </body>
 </html>
