@@ -1,2 +1,2 @@
 # monochromatic's old-website
-old monochromatic website made in HTML i think
+old monochromatic's style navium website made in HTML i think

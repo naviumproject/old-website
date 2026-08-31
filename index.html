@@ -19,63 +19,59 @@
             background-color: var(--bg-dark);
             color: var(--text-main);
             overflow-x: hidden;
+            font-size: 1.2rem; /* Texto base más grande */
+            font-weight: 600;  /* Texto general más bold */
         }
         h1, h2, h3 {
-            font-family: 'Times New Roman', serif; /* Simula la fuente serif original */
+            font-family: 'Times New Roman', serif;
             text-align: center;
+            font-weight: 800; /* Títulos extra bold */
         }
         a {
             color: var(--text-main);
             text-decoration: none;
         }
-        
-        /* Navegación */
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 50px;
-            background-color: #111;
-            border-bottom: 1px solid #333;
-        }
-        .nav-logo { font-size: 24px; font-weight: bold; font-family: serif; }
-        .nav-links { display: flex; gap: 20px; font-size: 14px; }
-        .nav-links a:hover { color: var(--accent); }
 
         /* Sección Hero con las 3 imágenes */
         .hero {
             text-align: center;
-            padding: 80px 20px;
+            padding: 100px 20px;
             background: linear-gradient(180deg, #1a1a1a 0%, #2a2a2a 100%);
         }
-        .hero h1 { font-size: 3rem; margin-bottom: 10px; }
-        .hero h3 { font-size: 1.5rem; font-weight: normal; margin-bottom: 40px; }
+        .hero h1 { font-size: 4.5rem; margin-bottom: 10px; }
+        .hero h3 { font-size: 1.8rem; margin-bottom: 40px; }
         
         .hero-images {
             display: flex;
             justify-content: center;
             align-items: center;
             gap: 20px;
-            margin-bottom: 40px;
-            max-width: 1000px;
+            margin-bottom: 50px;
+            max-width: 1200px;
             margin-left: auto;
             margin-right: auto;
         }
-        .hero-images img {
-            border-radius: 10px;
+        
+        /* Modificaciones en las imágenes: sin bordes redondos y filtro amarillo */
+        .hero-images img, .split-layout img {
+            border-radius: 0; 
             object-fit: cover;
+            filter: sepia(0.4) saturate(1.4) hue-rotate(-5deg); 
         }
-        .img-side { width: 300px; opacity: 0.8; transition: 0.3s; }
+        
+        /* Imágenes más grandes */
+        .img-side { width: 380px; opacity: 0.85; transition: 0.3s; }
         .img-side:hover { opacity: 1; transform: scale(1.05); }
-        .img-center { width: 250px; z-index: 2; } /* navium_icon.png */
+        .img-center { width: 320px; z-index: 2; }
 
         .btn-download {
             display: inline-block;
-            padding: 15px 30px;
-            border: 1px solid #fff;
+            padding: 18px 35px;
+            border: 2px solid #fff;
             background: transparent;
             color: #fff;
-            font-size: 16px;
+            font-size: 1.2rem;
+            font-weight: 800;
             cursor: pointer;
             transition: all 0.3s ease;
         }
@@ -85,7 +81,7 @@
         }
 
         /* Secciones Generales */
-        .section { padding: 80px 10%; }
+        .section { padding: 90px 10%; }
         .bg-alt { background-color: var(--bg-light); }
         
         /* Layout de 2 columnas */
@@ -95,58 +91,47 @@
             gap: 50px;
         }
         .split-layout > div { flex: 1; }
-        .split-layout img { max-width: 100%; border-radius: 10px; }
+        .split-layout img { max-width: 100%; }
 
         /* Acordeón de FAQs */
         details {
             background: #333;
-            margin-bottom: 10px;
-            padding: 15px;
-            border-radius: 5px;
+            margin-bottom: 15px;
+            padding: 20px;
+            border-radius: 0; /* Sin bordes redondeados */
             cursor: pointer;
         }
-        summary { font-weight: bold; font-family: serif; font-size: 1.2rem; }
-        details p { margin-top: 15px; color: #ccc; }
+        summary { font-weight: 800; font-family: serif; font-size: 1.5rem; }
+        details p { margin-top: 15px; color: #ccc; font-weight: normal; font-size: 1.1rem; }
 
         /* Grid de Características */
         .features-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 30px;
             text-align: center;
             margin-top: 50px;
         }
-        .feature-icon { font-size: 40px; margin-bottom: 15px; }
+        .feature-icon { font-size: 50px; margin-bottom: 15px; }
 
         /* Footer */
         footer {
             text-align: center;
-            padding: 30px;
+            padding: 40px;
             background: #000;
-            font-size: 0.9rem;
+            font-size: 1rem;
             color: #777;
+            font-weight: normal;
         }
 
         @media (max-width: 768px) {
-            .nav-links { display: none; } /* Ocultar menú en móviles por ahora */
             .hero-images { flex-direction: column; }
             .split-layout { flex-direction: column; }
+            .img-side, .img-center { width: 90%; }
         }
     </style>
 </head>
 <body>
-
-    <!-- Navegación -->
-    <nav>
-        <div class="nav-logo">hi</div>
-        <div class="nav-links">
-            <a href="/">home :) / navium</a>
-            <a href="#">fuckedge x.x</a>
-            <a href="#">github pages :x</a>
-            <a href="#">more</a>
-            <a href="#">weak browser</a>
-        </div>
-    </nav>
 
     <!-- Hero -->
     <section class="hero">
@@ -183,12 +168,12 @@
         <h2>Testimonials (spoiler: no one)</h2>
         <div class="split-layout" style="text-align: center; margin-top: 40px;">
             <div>
-                <img src="navium_icon.png" style="width: 150px;" alt="User">
+                <img src="navium_icon.png" style="width: 180px;" alt="User">
                 <h3>no one</h3>
                 <p>no one no one no one no one</p>
             </div>
             <div>
-                <img src="navium_icon.png" style="width: 150px;" alt="User">
+                <img src="navium_icon.png" style="width: 180px;" alt="User">
                 <h3>no one</h3>
                 <p>no one no one no one no one no one no one no one no one.</p>
             </div>
